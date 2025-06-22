@@ -290,13 +290,18 @@ body {
   bottom: 0;
   z-index: 1;
   overflow: hidden;
-  background: url('https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg') center/cover no-repeat;
+  background: 
+    linear-gradient(135deg, rgba(108, 92, 231, 0.1) 0%, rgba(253, 121, 168, 0.1) 100%),
+    radial-gradient(circle at 20% 50%, rgba(108, 92, 231, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(253, 121, 168, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(162, 155, 254, 0.2) 0%, transparent 50%),
+    linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f0f23 100%);
   animation: backgroundZoom 20s ease-in-out infinite;
 }
 
 @keyframes backgroundZoom {
   0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
+  50% { transform: scale(1.02); }
 }
 
 .hero-animated-bg::before {
@@ -306,33 +311,21 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(
-    135deg, 
-    rgba(26, 26, 46, 0.85) 0%, 
-    rgba(22, 33, 62, 0.75) 50%, 
-    rgba(15, 15, 35, 0.85) 100%
-  );
+  background: 
+    conic-gradient(from 0deg at 50% 50%, 
+      rgba(108, 92, 231, 0.1) 0deg,
+      rgba(253, 121, 168, 0.1) 90deg,
+      rgba(162, 155, 254, 0.1) 180deg,
+      rgba(253, 203, 110, 0.1) 270deg,
+      rgba(108, 92, 231, 0.1) 360deg
+    );
   z-index: 2;
-  animation: overlayPulse 10s ease-in-out infinite;
+  animation: overlayRotate 30s linear infinite;
 }
 
-@keyframes overlayPulse {
-  0%, 100% { 
-    background: linear-gradient(
-      135deg, 
-      rgba(26, 26, 46, 0.85) 0%, 
-      rgba(22, 33, 62, 0.75) 50%, 
-      rgba(15, 15, 35, 0.85) 100%
-    );
-  }
-  50% { 
-    background: linear-gradient(
-      135deg, 
-      rgba(26, 26, 46, 0.75) 0%, 
-      rgba(22, 33, 62, 0.65) 50%, 
-      rgba(15, 15, 35, 0.75) 100%
-    );
-  }
+@keyframes overlayRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 .hero-animated-bg::after {
@@ -345,7 +338,7 @@ body {
   background: linear-gradient(
     45deg,
     transparent 30%,
-    rgba(108, 92, 231, 0.1) 50%,
+    rgba(108, 92, 231, 0.15) 50%,
     transparent 70%
   );
   z-index: 3;
