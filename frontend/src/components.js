@@ -103,15 +103,15 @@ export const HeroSection = () => {
         <div className="hero-stats">
           <div className="stat-item">
             <span className="stat-number">156</span>
-            <span className="stat-label">Live Matches Today</span>
+            <span className="stat-label">Матчей сегодня</span>
           </div>
           <div className="stat-item">
             <span className="stat-number">2.4M</span>
-            <span className="stat-label">Active Players</span>
+            <span className="stat-label">Активных игроков</span>
           </div>
           <div className="stat-item">
             <span className="stat-number">$500K</span>
-            <span className="stat-label">Prize Pool</span>
+            <span className="stat-label">Призовой фонд</span>
           </div>
         </div>
       </div>
