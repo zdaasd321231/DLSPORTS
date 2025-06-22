@@ -10,12 +10,12 @@ export const Header = () => {
           <span className="tagline">Esports Coverage</span>
         </div>
         <nav className="main-nav">
-          <a href="#matches" className="nav-link">Matches</a>
-          <a href="#results" className="nav-link">Results</a>
-          <a href="#rankings" className="nav-link">Rankings</a>
-          <a href="#news" className="nav-link">News</a>
-          <a href="#stats" className="nav-link">Stats</a>
-          <a href="#forums" className="nav-link">Forums</a>
+          <a href="#matches" className="nav-link">Матчи</a>
+          <a href="#results" className="nav-link">Результаты</a>
+          <a href="#rankings" className="nav-link">Рейтинги</a>
+          <a href="#news" className="nav-link">Новости</a>
+          <a href="#stats" className="nav-link">Статистика</a>
+          <a href="#forums" className="nav-link">Форум</a>
         </nav>
         <div className="header-actions">
           <button className="live-indicator">
