@@ -149,6 +149,8 @@ export const HeroSection = () => {
           <div className="neon-circle circle1"></div>
           <div className="neon-circle circle2"></div>
           <div className="neon-circle circle3"></div>
+          <div className="neon-circle circle4"></div>
+          <div className="neon-circle circle5"></div>
         </div>
       </div>
       <div className="hero-content">
