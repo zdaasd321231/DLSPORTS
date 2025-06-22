@@ -442,21 +442,39 @@ body {
   width: 100%;
   height: 100%;
   background-image: 
-    radial-gradient(2px 2px at 20px 30px, #6c5ce7, transparent),
-    radial-gradient(2px 2px at 40px 70px, #fd79a8, transparent),
-    radial-gradient(1px 1px at 90px 40px, #a29bfe, transparent),
-    radial-gradient(1px 1px at 130px 80px, #fdcb6e, transparent),
-    radial-gradient(2px 2px at 160px 30px, #6c5ce7, transparent);
+    /* Большие яркие частицы */
+    radial-gradient(4px 4px at 50px 60px, #6c5ce7, transparent),
+    radial-gradient(3px 3px at 120px 120px, #fd79a8, transparent),
+    radial-gradient(5px 5px at 200px 80px, #a29bfe, transparent),
+    radial-gradient(2px 2px at 80px 160px, #fdcb6e, transparent),
+    radial-gradient(4px 4px at 180px 40px, #00b894, transparent),
+    radial-gradient(3px 3px at 30px 140px, #e17055, transparent),
+    /* Средние частицы */
+    radial-gradient(2px 2px at 160px 100px, #6c5ce7, transparent),
+    radial-gradient(3px 3px at 90px 180px, #fd79a8, transparent),
+    radial-gradient(2px 2px at 220px 140px, #a29bfe, transparent),
+    radial-gradient(4px 4px at 40px 80px, #fdcb6e, transparent),
+    /* Мелкие частицы */
+    radial-gradient(1px 1px at 70px 50px, #6c5ce7, transparent),
+    radial-gradient(1px 1px at 140px 170px, #fd79a8, transparent),
+    radial-gradient(1px 1px at 190px 110px, #a29bfe, transparent),
+    radial-gradient(1px 1px at 110px 30px, #fdcb6e, transparent),
+    radial-gradient(1px 1px at 250px 70px, #00b894, transparent);
   background-repeat: repeat;
-  background-size: 200px 100px;
-  animation: particlesFloat 20s linear infinite;
-  opacity: 0.6;
+  background-size: 300px 200px;
+  animation: particlesFloat 25s linear infinite, particlesPulse 8s ease-in-out infinite;
+  opacity: 0.8;
   z-index: 4;
 }
 
 @keyframes particlesFloat {
   0% { transform: translate3d(0, 0, 0); }
-  100% { transform: translate3d(-200px, -100px, 0); }
+  100% { transform: translate3d(-300px, -200px, 0); }
+}
+
+@keyframes particlesPulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
 }
 
 .animated-grid {
@@ -466,16 +484,34 @@ body {
   right: 0;
   bottom: 0;
   background-image: 
-    linear-gradient(rgba(108, 92, 231, 0.12) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(108, 92, 231, 0.12) 1px, transparent 1px);
-  background-size: 50px 50px;
-  animation: gridMove 15s linear infinite;
+    /* Основная сетка */
+    linear-gradient(rgba(108, 92, 231, 0.2) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(108, 92, 231, 0.2) 1px, transparent 1px),
+    /* Дополнительная диагональная сетка */
+    linear-gradient(45deg, rgba(253, 121, 168, 0.1) 1px, transparent 1px),
+    linear-gradient(-45deg, rgba(162, 155, 254, 0.1) 1px, transparent 1px),
+    /* Крупная сетка */
+    linear-gradient(rgba(253, 203, 110, 0.15) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(253, 203, 110, 0.15) 2px, transparent 2px);
+  background-size: 
+    50px 50px,
+    50px 50px,
+    35px 35px,
+    35px 35px,
+    100px 100px,
+    100px 100px;
   z-index: 5;
+  animation: gridMove 20s linear infinite, gridBreathe 12s ease-in-out infinite;
 }
 
 @keyframes gridMove {
   0% { transform: translate(0, 0); }
   100% { transform: translate(50px, 50px); }
+}
+
+@keyframes gridBreathe {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
 }
 
 .neon-circles {
@@ -490,49 +526,78 @@ body {
 .neon-circle {
   position: absolute;
   border-radius: 50%;
-  filter: blur(1px);
+  filter: blur(2px);
 }
 
 .circle1 {
-  width: 300px;
-  height: 300px;
-  top: -150px;
-  right: -150px;
-  background: radial-gradient(circle, rgba(108, 92, 231, 0.25) 0%, transparent 70%);
-  animation: neonPulse1 8s ease-in-out infinite;
+  width: 400px;
+  height: 400px;
+  top: -200px;
+  right: -200px;
+  background: radial-gradient(circle, rgba(108, 92, 231, 0.4) 0%, rgba(108, 92, 231, 0.2) 50%, transparent 70%);
+  animation: neonPulse1 10s ease-in-out infinite;
 }
 
 .circle2 {
-  width: 200px;
-  height: 200px;
-  bottom: -100px;
-  left: -100px;
-  background: radial-gradient(circle, rgba(253, 121, 168, 0.2) 0%, transparent 70%);
-  animation: neonPulse2 6s ease-in-out infinite;
+  width: 300px;
+  height: 300px;
+  bottom: -150px;
+  left: -150px;
+  background: radial-gradient(circle, rgba(253, 121, 168, 0.4) 0%, rgba(253, 121, 168, 0.2) 50%, transparent 70%);
+  animation: neonPulse2 8s ease-in-out infinite;
 }
 
 .circle3 {
+  width: 250px;
+  height: 250px;
+  top: 50%;
+  right: 10%;
+  background: radial-gradient(circle, rgba(162, 155, 254, 0.3) 0%, rgba(162, 155, 254, 0.15) 50%, transparent 70%);
+  animation: neonPulse3 12s ease-in-out infinite;
+}
+
+/* Дополнительные круги */
+.circle4 {
+  width: 200px;
+  height: 200px;
+  top: 20%;
+  left: 20%;
+  background: radial-gradient(circle, rgba(253, 203, 110, 0.3) 0%, rgba(253, 203, 110, 0.15) 50%, transparent 70%);
+  animation: neonPulse4 14s ease-in-out infinite;
+}
+
+.circle5 {
   width: 150px;
   height: 150px;
-  top: 50%;
-  right: 20%;
-  background: radial-gradient(circle, rgba(162, 155, 254, 0.2) 0%, transparent 70%);
-  animation: neonPulse3 10s ease-in-out infinite;
+  bottom: 30%;
+  right: 40%;
+  background: radial-gradient(circle, rgba(0, 184, 148, 0.3) 0%, rgba(0, 184, 148, 0.15) 50%, transparent 70%);
+  animation: neonPulse5 16s ease-in-out infinite;
 }
 
 @keyframes neonPulse1 {
-  0%, 100% { transform: scale(1); opacity: 0.25; }
-  50% { transform: scale(1.2); opacity: 0.5; }
+  0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.4; }
+  50% { transform: scale(1.3) rotate(180deg); opacity: 0.7; }
 }
 
 @keyframes neonPulse2 {
-  0%, 100% { transform: scale(1); opacity: 0.2; }
-  50% { transform: scale(1.3); opacity: 0.4; }
+  0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.3; }
+  50% { transform: scale(1.4) rotate(-180deg); opacity: 0.6; }
 }
 
 @keyframes neonPulse3 {
-  0%, 100% { transform: scale(1); opacity: 0.2; }
-  50% { transform: scale(1.1); opacity: 0.35; }
+  0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.3; }
+  50% { transform: scale(1.2) rotate(90deg); opacity: 0.5; }
+}
+
+@keyframes neonPulse4 {
+  0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.3; }
+  50% { transform: scale(1.5) rotate(-90deg); opacity: 0.6; }
+}
+
+@keyframes neonPulse5 {
+  0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.2; }
+  50% { transform: scale(1.3) rotate(270deg); opacity: 0.5; }
 }
 
 .hero-content {
