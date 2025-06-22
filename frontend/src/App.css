@@ -291,6 +291,12 @@ body {
   z-index: 1;
   overflow: hidden;
   background: url('https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg') center/cover no-repeat;
+  animation: backgroundZoom 20s ease-in-out infinite;
+}
+
+@keyframes backgroundZoom {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
 }
 
 .hero-animated-bg::before {
@@ -307,7 +313,48 @@ body {
     rgba(15, 15, 35, 0.85) 100%
   );
   z-index: 2;
+  animation: overlayPulse 10s ease-in-out infinite;
 }
+
+@keyframes overlayPulse {
+  0%, 100% { 
+    background: linear-gradient(
+      135deg, 
+      rgba(26, 26, 46, 0.85) 0%, 
+      rgba(22, 33, 62, 0.75) 50%, 
+      rgba(15, 15, 35, 0.85) 100%
+    );
+  }
+  50% { 
+    background: linear-gradient(
+      135deg, 
+      rgba(26, 26, 46, 0.75) 0%, 
+      rgba(22, 33, 62, 0.65) 50%, 
+      rgba(15, 15, 35, 0.75) 100%
+    );
+  }
+}
+
+.hero-animated-bg::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(108, 92, 231, 0.1) 50%,
+    transparent 70%
+  );
+  z-index: 3;
+  animation: scanLine 8s linear infinite;
+}
+
+@keyframes scanLine {
+  0% { transform: translateX(-100%) skewX(-15deg); }
+  100% { transform: translateX(200%) skewX(-15deg); }
 
 .floating-particles {
   position: absolute;
