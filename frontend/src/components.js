@@ -7,7 +7,21 @@ export const Header = () => {
       <div className="header-container">
         <div className="logo-section">
           <div className="logo-container">
-            <img src="https://images.pexels.com/photos/12877878/pexels-photo-12877878.jpeg" alt="Deadlock" className="deadlock-logo" />
+            <div className="deadlock-logo">
+              <svg width="50" height="50" viewBox="0 0 50 50" className="logo-svg">
+                <defs>
+                  <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#6c5ce7" />
+                    <stop offset="50%" stopColor="#fd79a8" />
+                    <stop offset="100%" stopColor="#a29bfe" />
+                  </linearGradient>
+                </defs>
+                <circle cx="25" cy="25" r="23" fill="url(#logoGradient)" stroke="#ffffff" strokeWidth="2"/>
+                <polygon points="15,15 35,15 40,25 35,35 15,35 10,25" fill="#ffffff" opacity="0.9"/>
+                <circle cx="25" cy="25" r="8" fill="url(#logoGradient)"/>
+                <circle cx="25" cy="25" r="4" fill="#ffffff"/>
+              </svg>
+            </div>
             <div className="logo-text">
               <h1 className="logo">DL<span className="logo-accent">SPORTS</span></h1>
               <span className="tagline">Киберспорт портал</span>
