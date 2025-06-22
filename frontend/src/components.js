@@ -20,7 +20,7 @@ export const Header = () => {
         <div className="header-actions">
           <button className="live-indicator">
             <span className="live-dot"></span>
-            LIVE
+            ПРЯМОЙ ЭФИР
           </button>
           <div className="user-menu">
             <span className="user-icon">👤</span>
