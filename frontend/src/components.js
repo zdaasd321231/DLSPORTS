@@ -98,8 +98,8 @@ export const HeroSection = () => {
   return (
     <section className="hero-section">
       <div className="hero-content">
-        <h1 className="hero-title">The Ultimate Deadlock Esports Hub</h1>
-        <p className="hero-subtitle">Live matches, tournament coverage, player stats, and breaking news from the world of competitive Deadlock</p>
+        <h1 className="hero-title">Лучший портал киберспорта по Deadlock</h1>
+        <p className="hero-subtitle">Прямые трансляции матчей, освещение турниров, статистика игроков и последние новости из мира киберспорта Deadlock</p>
         <div className="hero-stats">
           <div className="stat-item">
             <span className="stat-number">156</span>
