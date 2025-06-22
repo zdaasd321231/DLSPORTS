@@ -128,36 +128,54 @@ export const Sidebar = ({ activeSection, setActiveSection }) => {
 export const HeroSection = () => {
   return (
     <section className="hero-section">
-      <div className="hero-background">
-        <div className="hero-overlay"></div>
-        <img src="https://images.pexels.com/photos/8728386/pexels-photo-8728386.jpeg" alt="Deadlock Gaming" className="hero-bg-image" />
+      <div className="hero-animated-bg">
+        <div className="floating-particles"></div>
+        <div className="animated-grid"></div>
+        <div className="neon-circles">
+          <div className="neon-circle circle1"></div>
+          <div className="neon-circle circle2"></div>
+          <div className="neon-circle circle3"></div>
+        </div>
       </div>
       <div className="hero-content">
-        <div className="hero-badge">🎮 DEADLOCK ESPORTS</div>
+        <div className="hero-badge">
+          <span className="badge-icon">🎮</span>
+          <span className="badge-text">DEADLOCK ESPORTS</span>
+          <div className="badge-glow"></div>
+        </div>
         <h1 className="hero-title">
-          Лучший портал
-          <span className="hero-accent"> киберспорта </span>
-          по Deadlock
+          <span className="title-line">Лучший портал</span>
+          <span className="hero-accent animated-text"> киберспорта </span>
+          <span className="title-line">по Deadlock</span>
         </h1>
         <p className="hero-subtitle">
           Прямые трансляции матчей, освещение турниров, статистика игроков и последние новости из мира киберспорта Deadlock
         </p>
         <div className="hero-buttons">
-          <button className="hero-btn primary">Смотреть матчи</button>
-          <button className="hero-btn secondary">Турниры</button>
+          <button className="hero-btn primary">
+            <span>Смотреть матчи</span>
+            <div className="btn-effect"></div>
+          </button>
+          <button className="hero-btn secondary">
+            <span>Турниры</span>
+            <div className="btn-outline-effect"></div>
+          </button>
         </div>
         <div className="hero-stats">
-          <div className="stat-card">
-            <div className="stat-number">156</div>
+          <div className="stat-card animated-card">
+            <div className="stat-number counter" data-target="156">0</div>
             <div className="stat-label">Матчей сегодня</div>
+            <div className="stat-glow"></div>
           </div>
-          <div className="stat-card">
-            <div className="stat-number">2.4M</div>
-            <div className="stat-label">Активных игроков</div>
+          <div className="stat-card animated-card">
+            <div className="stat-number counter" data-target="2.4">0</div>
+            <div className="stat-label">Активных игроков (M)</div>
+            <div className="stat-glow"></div>
           </div>
-          <div className="stat-card">
+          <div className="stat-card animated-card">
             <div className="stat-number">$500K</div>
             <div className="stat-label">Призовой фонд</div>
+            <div className="stat-glow"></div>
           </div>
         </div>
       </div>
